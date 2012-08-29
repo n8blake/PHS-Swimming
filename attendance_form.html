@@ -4,7 +4,9 @@
 
 <head>
 	<title>PHS Attendance</title>
+		<link rel="stylesheet" href="reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="attendance_style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
 	<script src="attendance_script.js"></script>
 </head>
 
@@ -12,22 +14,51 @@
 
 	
 	<header id="header">
-		<h1 id="date">Today's Date</h1>
-		<h3 id="sort">sort</sort></h3>
+				<h1 id="date">Today's Date</h1>
+				<h3 id="sort">sort</sort></h3>
 	</header>
 	
 	<div id="list">
-		<p id="swimmer_1">Swimmer 1</p>
-		<p id="swimmer_2">Swimmer 2</p>
-		<p id="swimmer_1">Swimmer 1</p>
-		<p id="swimmer_2">Swimmer 2</p>
-		<p id="swimmer_1">Swimmer 1</p>
-		<p id="swimmer_2">Swimmer 2</p>
-		<p id="swimmer_1">Swimmer 1</p>
-		<p id="swimmer_2">Swimmer 2</p>
-		..
-		<p id="swimmer_n">Swimmer n</p>
+		<ul>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+			<li id="swimmer">Swimmer<form>
+				<input type="checkbox" name="attendance" value="present" />
+			</form></li>
+		</ul>
 	</div>
+
+	
+<!--    
+		//declare a string for a mysql query
+		$swimmerQuery = "SELECT * FROM swimmers";
+		$swimmersArray = mysql_query($swimmerQuery);
+		print("<ul>");
+		foreach($swimmersArray as $swimmer) {
+			print("<li>$swimmer</li>");
+		}
+		print("</ul>");
+
+-->
 
 </body>
 
