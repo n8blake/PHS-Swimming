@@ -1,3 +1,58 @@
-p {
+body {
+	background-color: #202820;
+	font: Helvetica, sans-serif;
+
+}
+
+header {
+	height:55px;
+}
+
+#date {
+	color:#fff;
+	text-align:left;
+	font: 30px Helvetica, sans-serif;
+	display:inline;
+	float:left;
+	padding:10px;
+}
+
+#sort {
+	color:#eee;
+	display:inline;
+	float:right;
+	font: 15px Helvetica, sans-serif;
+	padding-right:30px;
+	padding-top:5px;
+}
+
+
+ul  {
+	width: 100%;
+	list-style-position: inside;
 	
 }
+
+ul li {
+	padding: 10px;
+	font: 20px Helvetica, sans-serif;
+	margin: none;
+	list-style:none;	
+}
+
+ul li:nth-child(odd) {
+	background-color: #fff;
+}
+
+ul li:nth-child(even) {
+	background-color: #ccc;
+}
+ul li form {
+	float: right;
+	padding-right:50px;
+	padding-top: -5px;
+	size:20px;
+}
+
+
+
