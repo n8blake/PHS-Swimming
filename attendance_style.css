@@ -50,7 +50,6 @@ ul li:nth-child(even) {
 ul li form {
 	float: right;
 	padding-right:50px;
-	padding-top: -5px;
 	size:20px;
 }
 
