@@ -2,26 +2,27 @@
 require("../credentials.php");
 if ($userName && $dbName && $hostName) {
 	
-	$con = mysql_connect($hostName, $userName, $password);
-	if($con){
-		print("Connected.");
-		
-		// Execute query
-		
-		// $sql = "SELECT * FROM `swimmers`";
-		
-		$mysqli = new mysqli($hostName, $userName, $password, $dbName);
-		$result = $mysqli->query("SELECT * FROM `swimmers`");		
-		$swimmersArray = array($result);
-		print_r ($result);
-		mysql_close($con);
-	}
-	
+	$con = mysql_connect($hostName, $userName, $password, $dbName);
 	if (!$con)
 	  {
 	  die('Could not connect: ' . mysql_error());
 	  }
 	
+	if($con){
+		print("Connected.");
+		echo "<br />";
+	}
+		mysql_select_db($dbName, $con);
+
+		$result = mysql_query("SELECT * FROM swimmers");	
+		while($row = mysql_fetch_array($result))
+		  {
+		  echo $row['firstName'] . " " . $row['lastName'];
+		  echo "<br />";
+		  }
+		mysql_close($con);
+
+
 
 	
 
@@ -31,4 +32,3 @@ if ($userName && $dbName && $hostName) {
 }
 
 ?>
-
