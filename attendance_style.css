@@ -1,5 +1,5 @@
 body {
-	background-color: #202820;
+	background-color: #eee;
 	font: Helvetica, sans-serif;
 
 }
@@ -8,8 +8,8 @@ header {
 	height:55px;
 }
 
-#date {
-	color:#fff;
+#date, #day {
+	color:#333;
 	text-align:left;
 	font: 30px Helvetica, sans-serif;
 	display:inline;
@@ -18,7 +18,7 @@ header {
 }
 
 #sort {
-	color:#eee;
+	color:#333;
 	display:inline;
 	float:right;
 	font: 15px Helvetica, sans-serif;
@@ -50,7 +50,6 @@ ul li:nth-child(even) {
 ul li form {
 	float: right;
 	padding-right:50px;
-	padding-top: -5px;
 	size:20px;
 }
 

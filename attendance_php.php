@@ -1,33 +1,34 @@
 <?php
-$con = mysql_connect("localhost","admin","qanotify");
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
+require("../credentials.php");
+if ($userName && $dbName && $hostName) {
+	
+	$con = mysql_connect($hostName, $userName, $password, $dbName);
+	if (!$con)
+	  {
+	  die('Could not connect: ' . mysql_error());
+	  }
+	
+	if($con){
+		print("Connected.");
+		echo "<br />";
+	}
+		mysql_select_db($dbName, $con);
 
-// Create database
-if (mysql_query("CREATE DATABASE swimmers",$con))
-  {
-  echo "Database created";
-  }
-else
-  {
-  echo "Error creating database: " . mysql_error();
-  }
+		$result = mysql_query("SELECT * FROM swimmers");	
+		while($row = mysql_fetch_array($result))
+		  {
+		  echo $row['firstName'] . " " . $row['lastName'];
+		  echo "<br />";
+		  }
+		mysql_close($con);
 
-// Create table
-mysql_select_db("swimmers", $con);
-$sql = "CREATE TABLE Persons
-(
-personID int NOT NULL AUTO_INCREMENT, 
-PRIMARY KEY(personID),
-FirstName varchar(15),
-LastName varchar(15),
-Age int
-)";
 
-// Execute query
-mysql_query($sql,$con);
 
-mysql_close($con);
+	
+
+
+} else {
+	print("No database credentials.");
+}
+
 ?>
