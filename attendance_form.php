@@ -15,10 +15,10 @@
 	
 	<header id="header">
 				<h1 id="date">
-				<script>
-					var d=new Date();
-					document.write(d);
-				</script>
+				<?php
+				echo date("m/d/Y");
+				
+				?>
 				</h1>
 			
 				<!-- <h1 id="day" onload="displayDay()">Day</h1> -->
@@ -58,7 +58,7 @@
 							while($row = mysql_fetch_array($result))
 							  {
 							  echo "<li id='swimmer'>" . $row['firstName'] . " " . $row['lastName'];
-							  echo "<form>" . "<input type='checkbox' name='attendance' value='present' />" . "</form>". "</li>";
+							  echo "<form id=" . $row['id'] . " >" . "<input type='checkbox' name='attendance' value='present' />" . "</form>". "</li>";
 							  }
 							mysql_close($con);
 
