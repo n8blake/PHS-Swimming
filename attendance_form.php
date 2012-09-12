@@ -15,9 +15,18 @@
 	
 	<header id="header">
 				<h1 id="date">
+<<<<<<< HEAD
 				<?php
 				echo date("m/d/Y");
 				
+=======
+				<!-- <script>
+					var d=new Date();
+					document.write(d);
+				</script> -->
+				<?php
+				echo date("d/m/Y");				
+>>>>>>> some extra stuff?
 				?>
 				</h1>
 			

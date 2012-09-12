@@ -22,11 +22,6 @@ if ($userName && $dbName && $hostName) {
 		  }
 		mysql_close($con);
 
-
-
-	
-
-
 } else {
 	print("No database credentials.");
 }
