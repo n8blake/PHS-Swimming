@@ -60,15 +60,23 @@
 						if($con){
 							log("Connected.");
 							echo "<br />";
+						    echo "<li id='swimmer'>";
+							echo "<form action='test_form2.php' method='post'>";
 						}
 							mysql_select_db($dbName, $con);
 
 							$result = mysql_query("SELECT * FROM swimmers");	
 							while($row = mysql_fetch_array($result))
 							  {
-							  echo "<li id='swimmer'>" . $row['firstName'] . " " . $row['lastName'];
-							  echo "<form id=" . $row['id'] . " >" . "<input type='checkbox' name='attendance' value='present' />" . "</form>". "</li>";
-							  }
+							 
+							  echo $row['firstName'] . " " . $row['lastName'];
+							  echo "<input type='hidden' name='id' value=" . $row['id'] . "/>";
+							  echo "<input id='check' type='checkbox' name='attendance' value='1' />";
+							  echo "<br />";
+							   
+							}
+							echo "<input id='submit' type='submit' name='Submit' /> </form>";
+							echo "</li>";
 							mysql_close($con);
 
 					} else {

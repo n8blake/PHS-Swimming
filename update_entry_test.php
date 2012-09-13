@@ -10,17 +10,15 @@ if (!$con)
 mysql_select_db($dbName, $con);
 $today = date("Y-m-d");
 
-// $swimmer_id = mysql_query("SELECT id from swimmers WHERE lastName='$_POST[lastName]'");
-
-$sql="INSERT INTO attendance (swimmer_id, date, attendance)
-VALUES
-('$_POST[id]','$today', '$_POST[attendance]')";
+$sql="UPDATE attendance 
+SET attendance = '1' 
+WHERE swimmer_id ='$_POST[swimmer_id]'";
 
 if (!mysql_query($sql,$con))
   {
   die('Error: ' . mysql_error());
   }
-echo "1 record added";
+echo "1 record updated";
 echo "<br />";
 echo "$today";
 
